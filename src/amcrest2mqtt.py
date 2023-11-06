@@ -429,7 +429,11 @@ async def main():
             elif code == "_DoTalkAction_":
                 doorbell_payload = "on" if payload["data"]["Action"] == "Invite" else "off"
                 mqtt_publish(topics["doorbell"], doorbell_payload)
-
+            elif code == "RtspSessionDisconnect":
+                mqtt_publish(topics["motion"], "off")
+                mqtt_publish(topics["human"], "off")
+                mqtt_publish(topics["doorbell"], "off")
+                
             mqtt_publish(topics["event"], payload, json=True)
             log(str(payload))
 
