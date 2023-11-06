@@ -42,6 +42,6 @@ jobs:
                   push: true
                   platforms: linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8,linux/ppc64le,linux/s390x
                   tags: |
-                      dchesterton/amcrest2mqtt:latest
-                      dchesterton/amcrest2mqtt:${{ steps.version.outputs.version }}
+                      jtse02/amcrest2mqtt:latest
+                      jtse02/amcrest2mqtt:${{ steps.version.outputs.version }}
                   labels: "version=${{ steps.version.outputs.version }}"
